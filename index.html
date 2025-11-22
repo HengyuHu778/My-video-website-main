@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Video Website</title>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:700,400|Pacifico|Quicksand:500,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: 'Montserrat', Arial, sans-serif;
+      background: linear-gradient(135deg, #23272f 0%, #444950 100%);
+      min-height: 100vh;
+      margin: 0;
+      padding: 0;
+      color: #e3e6eb;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .container {
+      background: rgba(255,255,255,0.95);
+      border-radius: 18px;
+      box-shadow: 0 8px 32px rgba(60,60,120,0.15);
+      padding: 40px 32px 32px 32px;
+      margin-top: 48px;
+      max-width: 950px;
+      width: 95%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border: 2px solid #a1c4fd;
+    }
+    h1 {
+      font-family: 'Pacifico', cursive, Arial, sans-serif;
+      font-size: 2.7em;
+      font-weight: 700;
+      letter-spacing: 2px;
+      color: #4f8cff;
+      margin-bottom: 18px;
+      margin-top: 0;
+      text-shadow: 1px 2px 8px #c1d3fe;
+    }
+    .info {
+      font-size: 1.2em;
+      color: #6c63ff;
+      margin-bottom: 32px;
+      font-weight: 500;
+      letter-spacing: 1px;
+      background: linear-gradient(90deg, #a1c4fd 0%, #c2e9fb 100%);
+      padding: 10px 24px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px #e0e7ff;
+    }
+    .videos {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 32px;
+      justify-content: center;
+      margin-top: 16px;
+    }
+    .video-block {
+      background: linear-gradient(120deg, #fbc2eb 0%, #a6c1ee 100%);
+      border-radius: 14px;
+      box-shadow: 0 2px 12px #dbeafe;
+      padding: 18px 12px 12px 12px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 280px;
+      border: 1.5px solid #a1c4fd;
+      transition: transform 0.2s;
+    }
+    .video-block:hover {
+      transform: translateY(-6px) scale(1.03);
+      box-shadow: 0 8px 24px #b6ccfe;
+    }
+    .video-block video {
+      width: 100%;
+      border-radius: 8px;
+      margin-bottom: 8px;
+      background: #000;
+      border: 2px solid #6c63ff;
+    }
+    .video-title {
+      font-size: 1.08em;
+      color: #4f8cff;
+      font-weight: 600;
+      margin-top: 4px;
+      letter-spacing: 1px;
+      text-shadow: 0 1px 4px #e0e7ff;
+    }
+    @media (max-width: 900px) {
+      .videos {
+        flex-direction: column;
+        align-items: center;
+      }
+      .video-block {
+        width: 90vw;
+        max-width: 350px;
+      }
+    }
+    .intro-section {
+      margin-bottom: 38px;
+      padding: 32px 28px 28px 28px;
+      background: linear-gradient(120deg, #e0c3fc 0%, #8ec5fc 100%);
+      border-radius: 18px;
+      box-shadow: 0 4px 24px #e0e7ff;
+      max-width: 800px;
+      width: 100%;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border: 2px solid #a1c4fd;
+    }
+    .intro-section h2 {
+      font-family: 'Pacifico', cursive, Arial, sans-serif;
+      font-size: 2.1em;
+      color: #6c63ff;
+      margin-bottom: 18px;
+      margin-top: 0;
+      letter-spacing: 1px;
+      text-shadow: 0 2px 8px #e0e7ff;
+    }
+    .intro-text {
+      font-family: 'Quicksand', 'Montserrat', Arial, sans-serif;
+      font-size: 1.18em;
+      color: #3a5a98;
+      line-height: 1.8;
+      margin-bottom: 30px;
+      background: rgba(255,255,255,0.7);
+      border-radius: 10px;
+      padding: 18px 20px;
+      box-shadow: 0 2px 8px #e0e7ff;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+      text-align: left;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .photo-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px 28px;
+      justify-items: center;
+      align-items: center;
+      margin-bottom: 48px;
+      margin-top: 10px;
+      padding: 0 10px;
+    }
+    .photo-grid img {
+      width: 170px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 14px;
+      box-shadow: 0 4px 18px #b6ccfe;
+      border: 2.5px solid #a1c4fd;
+      transition: transform 0.18s, box-shadow 0.18s;
+      background: #fff;
+    }
+    .photo-grid img:hover {
+      transform: scale(1.06) rotate(-2deg);
+      box-shadow: 0 8px 32px #a1c4fd;
+      border-color: #6c63ff;
+    }
+    @media (max-width: 900px) {
+      .photo-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 18px 14px;
+      }
+      .photo-grid img {
+        width: 44vw;
+        max-width: 170px;
+        height: 100px;
+      }
+    }
+    @media (max-width: 600px) {
+      .photo-grid {
+        grid-template-columns: 1fr;
+        gap: 14px 0;
+      }
+      .photo-grid img {
+        width: 90vw;
+        max-width: 98vw;
+        height: 90px;
+      }
+      .intro-section {
+        padding: 18px 6vw 18px 6vw;
+      }
+    }
+    .portfolio-title {
+      font-family: 'Pacifico', cursive, Arial, sans-serif;
+      font-size: 2em;
+      color: #ff7eb3;
+      margin: 60px 0 24px 0;
+      letter-spacing: 1.5px;
+      text-shadow: 0 2px 8px #e0e7ff;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="intro-section">
+    <h2>About Me</h2>
+    <div class="intro-text">
+      My name is Hengyu Hu, and I come from China. I am a humorous and optimistic person. I enjoy playing basketball and video games, but what I love the most is traveling and filming. I like to document life, whether through photos or videos.<br><br>
+      I also have some experience in film production, working in a team where everyone took on different roles. I believe that each department—such as directing, screenwriting, cinematography, sound, art design, and post-production—plays a vital role in creating a complete film. It is fascinating to see how everyone’s efforts come together into one final piece, and it always brings me a strong sense of pride.<br><br>
+      What’s more, working in a group is never just about the film itself—there are always stories and experiences shared within the team that make the process even more special. That is why I am really looking forward to collaborating with my classmates in this program to create meaningful and inspiring works in the future.<br><br>
+      <span style="color:#6c63ff; font-weight:600;">Here are some photos from my previous group projects:</span>
+    </div>
+    <div class="photo-grid">
+      <img src="photo/1.jpg" alt="Photo 1">
+      <img src="photo/2.jpg" alt="Photo 2">
+      <img src="photo/3.jpg" alt="Photo 3">
+      <img src="photo/4.jpg" alt="Photo 4">
+      <img src="photo/5.jpg" alt="Photo 5">
+      <img src="photo/6.jpg" alt="Photo 6">
+      <img src="photo/7.jpg" alt="Photo 7">
+      <img src="photo/8.jpg" alt="Photo 8">
+      <img src="photo/9.jpg" alt="Photo 9">
+    </div>
+  </div>
+  <div class="portfolio-title">Portfolio</div>
+  <div class="info">
+    Hengyu Hu<br>
+    z5502656
+  </div>
+  <div class="videos">
+    <!-- 删除原有的三个 video-block -->
+  </div>
+  <script src="script.js"></script>
+  <script>
+    // Lightbox functionality for photo grid
+    document.addEventListener('DOMContentLoaded', function () {
+      const images = document.querySelectorAll('.photo-grid img');
+      images.forEach(img => {
+        img.addEventListener('click', function () {
+          const overlay = document.createElement('div');
+          overlay.className = 'lightbox-overlay';
+          overlay.innerHTML = `
+            <span class="close-btn" title="Close">&times;</span>
+            <img src="${img.src}" alt="${img.alt}">
+          `;
+          document.body.appendChild(overlay);
+
+          overlay.querySelector('.close-btn').onclick = () => overlay.remove();
+          overlay.onclick = (e) => { if (e.target === overlay) overlay.remove(); };
+          document.addEventListener('keydown', function escListener(ev) {
+            if (ev.key === 'Escape') {
+              overlay.remove();
+              document.removeEventListener('keydown', escListener);
+            }
+          });
+        });
+      });
+    });
+  </script>
+  <link rel="stylesheet" href="style.css?v=5">
+  <section class="video-section">
+    <h2>Portfolio</h2>
+
+    <h3>Week 2</h3>
+
+    <h4>Video 1:</h4>
+    <video controls preload="metadata" style="width:100%; max-width:900px; height:auto; border-radius:8px; box-shadow:0 6px 24px rgba(0,0,0,0.45); margin:12px 0;">
+      <source src="video/1.mp4" type="video/mp4">
+      <p>浏览器不支持此视频。<a href="video/1.mp4" target="_blank" rel="noopener">在新窗口打开或下载</a></p>
+    </video>
+
+    <h4>Video 2:</h4>
+    <video controls preload="metadata" style="width:100%; max-width:900px; height:auto; border-radius:8px; box-shadow:0 6px 24px rgba(0,0,0,0.45); margin:12px 0;">
+      <source src="video/2.mp4" type="video/mp4">
+      <p>浏览器不支持此视频。<a href="video/2.mp4" target="_blank" rel="noopener">在新窗口打开或下载</a></p>
+    </video>
+
+    <h4>Video 3:</h4>
+    <video controls preload="metadata" style="width:100%; max-width:900px; height:auto; border-radius:8px; box-shadow:0 6px 24px rgba(0,0,0,0.45); margin:12px 0;">
+      <source src="video/3.mp4" type="video/mp4">
+      <p>浏览器不支持此视频。<a href="video/3.mp4" target="_blank" rel="noopener">在新窗口打开或下载</a></p>
+    </video>
+
+    <h3>Week 3</h3>
+
+    <h4>Video 4:</h4>
+    <video controls preload="metadata" style="width:100%; max-width:900px; height:auto; border-radius:8px; box-shadow:0 6px 24px rgba(0,0,0,0.45); margin:12px 0;">
+      <source src="video/4.mp4" type="video/mp4">
+      <p>浏览器不支持此视频。<a href="video/4.mp4" target="_blank" rel="noopener">在新窗口打开或下载</a></p>
+    </video>
+
+    <h3>Week 4</h3>
+
+    <h4>Rode Go version</h4>
+
+    <h5>Video 5:</h5>
+    <video controls preload="metadata" style="width:100%; max-width:900px; height:auto; border-radius:8px; box-shadow:0 6px 24px rgba(0,0,0,0.45); margin:12px 0;">
+      <source src="video/5.mp4" type="video/mp4">
+      <p>浏览器不支持此视频。<a href="video/5.mp4" target="_blank" rel="noopener">在新窗口打开或下载</a></p>
+    </video>
+
+    <h5>Video 6:</h5>
+    <video controls preload="metadata" style="width:100%; max-width:900px; height:auto; border-radius:8px; box-shadow:0 6px 24px rgba(0,0,0,0.45); margin:12px 0;">
+      <source src="video/6.mp4" type="video/mp4">
+      <p>浏览器不支持此视频。<a href="video/6.mp4" target="_blank" rel="noopener">在新窗口打开或下载</a></p>
+    </video>
+
+    <h4>original</h4>
+
+    <h5>Video 7:</h5>
+    <video controls preload="metadata" style="width:100%; max-width:900px; height:auto; border-radius:8px; box-shadow:0 6px 24px rgba(0,0,0,0.45); margin:12px 0;">
+      <source src="video/7.mp4" type="video/mp4">
+      <p>浏览器不支持此视频。<a href="video/7.mp4" target="_blank" rel="noopener">在新窗口打开或下载</a></p>
+    </video>
+
+    <h5>Video 8:</h5>
+    <video controls preload="metadata"
+           style="display:block; width:100%; max-width:900px; margin:12px auto 36px auto; height:auto; border-radius:8px; box-shadow:0 6px 24px rgba(0,0,0,0.45);">
+      <source src="video/8.mp4" type="video/mp4">
+      <p>浏览器不支持此视频。<a href="video/8.mp4" target="_blank" rel="noopener">在新窗口打开或下载</a></p>
+    </video>
+
+    <!-- Video 9: 改成带标题 Klushev Effect -->
+    <h5>Video 9: Klushev Effect</h5>
+    <video controls preload="metadata"
+           style="display:block; width:100%; max-width:900px; margin:12px auto 24px auto; height:auto; border-radius:8px; box-shadow:0 6px 24px rgba(0,0,0,0.45);">
+      <source src="video/9.mp4" type="video/mp4">
+      <p>浏览器不支持此视频。<a href="video/9.mp4" target="_blank" rel="noopener">在新窗口打开或下载</a></p>
+    </video>
+
+    <!-- Klushev effect 内容（已移为紧跟在 Video 9 之后，去掉重复标题） -->
+    <div class="klushev-section" style="max-width:900px; margin:18px auto; text-align:center;">
+      <h4 style="margin:6px 0 12px 0; color:#4f8cff;">film screen shot</h4>
+      <img src="photo/screen shot.jpg" alt="film screen shot"
+           style="display:block; width:100%; height:auto; border-radius:8px; box-shadow:0 6px 24px rgba(0,0,0,0.45); margin:0 0 12px 0; border:2px solid #6c63ff;">
+
+      <h4 style="margin:6px 0 6px 0; color:#4f8cff;">light analysis</h4>
+      <img src="photo/light position.jpg" alt="light analysis"
+           style="display:block; width:100%; height:auto; border-radius:8px; box-shadow:0 6px 24px rgba(0,0,0,0.45); margin:0 0 18px 0; border:2px solid #6c63ff;">
+
+      <!-- 新增标题 -->
+      <h4 style="margin:6px 0 6px 0; color:#4f8cff;">Remake Poster</h4>
+      <img src="photo/remake poster.jpg" alt="remake poster"
+           style="display:block; width:100%; height:auto; border-radius:8px; box-shadow:0 6px 24px rgba(0,0,0,0.45); margin:0 0 18px 0;">
+      
+      <h5 style="margin:6px 0 6px 0;">Video 10: Remake Rehearsal</h5>
+      <video controls preload="metadata"
+             style="display:block; width:100%; max-width:900px; margin:12px auto 36px auto; height:auto; border-radius:8px; box-shadow:0 6px 24px rgba(0,0,0,0.45);">
+        <source src="video/10.mp4" type="video/mp4">
+        <p>浏览器不支持此视频。<a href="video/10.mp4" target="_blank" rel="noopener">在新窗口打开或下载</a></p>
+      </video>
+    </div>
+  </section>
+</body>
+</html>
