@@ -217,6 +217,30 @@ h1 {
   text-shadow: 0 1px 4px #23272f;
 }
 
+.description {
+  max-width: 900px;
+  margin: 24px auto 36px auto;
+  font-family: 'Quicksand', 'Montserrat', Arial, sans-serif;
+  line-height: 1.7;
+  color: #fff;
+}
+
+.description p {
+  margin-bottom: 16px;
+}
+
+/* 新增的说明文字，改用白色字体 */
+<div class="description">
+  <p>
+    For this exercise we created a short chase scene where one character is chasing another. The aim was to make the scene visually interesting by including obstacles and keeping the audience unsure about what might happen next. We filmed the scene using a smartphone with the Blackmagic Camera app and mainly used handheld shots to give the chase a more energetic and natural feeling.
+  </p>
+  <p>
+    Analysis
+    <br>
+    The handheld camera worked quite well for this scene because it made the movement feel more intense and helped build tension during the chase. However, some of the shot transitions were not very smooth, so the continuity between shots could be improved. We also had some issues with the original background sound, so we decided to replace most of the audio during editing. If we were to do this again, we would plan the shot sequence more carefully and try to capture better location sound to make the scene feel more natural.
+  </p>
+</div>
+
 @media (max-width: 1200px) {
   .photo-grid img {
     width: 30vw;
