@@ -189,6 +189,53 @@
         padding: 18px 6vw 18px 6vw;
       }
     }
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px 28px;
+      justify-items: center;
+      align-items: center;
+      margin-bottom: 48px;
+      margin-top: 10px;
+      padding: 0 10px;
+    }
+    .video-grid video {
+      width: 170px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 14px;
+      box-shadow: 0 4px 18px #b6ccfe;
+      border: 2.5px solid #a1c4fd;
+      transition: transform 0.18s, box-shadow 0.18s;
+      background: #000;
+    }
+    .video-grid video:hover {
+      transform: scale(1.06) rotate(-2deg);
+      box-shadow: 0 8px 32px #a1c4fd;
+      border-color: #6c63ff;
+    }
+    @media (max-width: 900px) {
+      .video-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 18px 14px;
+      }
+      .video-grid video {
+        width: 44vw;
+        max-width: 170px;
+        height: 100px;
+      }
+    }
+    @media (max-width: 600px) {
+      .video-grid {
+        grid-template-columns: 1fr;
+        gap: 14px 0;
+      }
+      .video-grid video {
+        width: 90vw;
+        max-width: 98vw;
+        height: 90px;
+      }
+    }
     .portfolio-title {
       font-family: 'Pacifico', cursive, Arial, sans-serif;
       font-size: 2em;
@@ -288,6 +335,7 @@
       <p>浏览器不支持此视频。<a href="video/4.mp4" target="_blank" rel="noopener">在新窗口打开或下载</a></p>
     </video>
 
+
     <h3>Week 4</h3>
 
     <h4>Rode Go version</h4>
@@ -378,3 +426,35 @@
   </section>
 </body>
 </html>
+<h3>Week 3</h3>
+<h4>lighting exercise</h4>
+
+    <h5>Video 12:</h5>
+    <video controls preload="metadata" style="width:100%; max-width:900px; height:auto; border-radius:8px; box-shadow:0 6px 24px rgba(0,0,0,0.45); margin:12px 0;">
+      <source src="video/12.mp4" type="video/mp4">
+      <p>浏览器不支持此视频。<a href="video/12.mp4" target="_blank" rel="noopener">在新窗口打开或下载</a></p>
+    </video>
+
+    <h5>Video 13:</h5>
+    <video controls preload="metadata" style="width:100%; max-width:900px; height:auto; border-radius:8px; box-shadow:0 6px 24px rgba(0,0,0,0.45); margin:12px 0;">
+      <source src="video/13.MP4" type="video/mp4">
+      <p>浏览器不支持此视频。<a href="video/13.MP4" target="_blank" rel="noopener">在新窗口打开或下载</a></p>
+    </video>
+
+    <h5>Video 14:</h5>
+    <video controls preload="metadata" style="width:100%; max-width:900px; height:auto; border-radius:8px; box-shadow:0 6px 24px rgba(0,0,0,0.45); margin:12px 0;">
+      <source src="video/14.mp4" type="video/mp4">
+      <p>浏览器不支持此视频。<a href="video/14.mp4" target="_blank" rel="noopener">在新窗口打开或下载</a></p>
+    </video>
+
+    <h5>Video 15:</h5>
+    <video controls preload="metadata" style="width:100%; max-width:900px; height:auto; border-radius:8px; box-shadow:0 6px 24px rgba(0,0,0,0.45); margin:12px 0;">
+      <source src="video/15.mp4" type="video/mp4">
+      <p>浏览器不支持此视频。<a href="video/15.mp4" target="_blank" rel="noopener">在新窗口打开或下载</a></p>
+    </video>
+
+    <h5>Video 16:</h5>
+    <video controls preload="metadata" style="width:100%; max-width:900px; height:auto; border-radius:8px; box-shadow:0 6px 24px rgba(0,0,0,0.45); margin:12px 0;">
+      <source src="video/16.MP4" type="video/mp4">
+      <p>浏览器不支持此视频。<a href="video/16.MP4" target="_blank" rel="noopener">在新窗口打开或下载</a></p>
+    </video>
